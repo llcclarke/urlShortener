@@ -1,0 +1,13 @@
+
+*.class
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+out
+sbt
+bin/
+target/
+build/
+project/target
