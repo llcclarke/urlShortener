@@ -10,16 +10,14 @@ import com.twitter.util.{Await, Future}
 
 object Server extends App {
 
-  val urlGenerator = new UrlGenerator
-  val db = new UrlDatabaseService
-  val collection = db.collection
-
+  val urlController = new UrlController
 
   val router = new Service[Request, Response] {
 
     override def apply(req: Request): Future[Response] = {
       (req.method, req.path) match {
-        case (Method.Put, url) => urlGenerator.toTier(url)
+        case (Method.Put, url) => urlController.toTier(url)
+        case (Method.Get, shortUrl) => urlController.toUrl(shortUrl)
       }
     }
   }

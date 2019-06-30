@@ -10,5 +10,4 @@ class UrlDatabaseService {
 
   val collection: MongoCollection[Document] = database.getCollection("urls")
 
-
 }
