@@ -34,3 +34,13 @@ To get the url back
 ``curl -X GET 'localhost:8080/b3Zlcmx5bG9uZ2FuZGNvbXBsaWNhdGVkdXJsLmNvbQ==' -v``
 
 Should return ``overlylongandcomplicatedurl.com``
+
+
+
+##### Extensions / Future work / Thoughs
+* Refactoring and testing of Database
+* Testing of retrieval of urls
+* Refactoring out logic for encoding urls
+* The Urls currently are not any shorter with the current encoding of the urls. Need to look into / implement something that is in fact shorter.
+* It currently only gets the url and returns it, and doesn't perform a redirect, and with the current set up there is actually no need to access the database to get the url, this is essentially just a service to hide urls.
+

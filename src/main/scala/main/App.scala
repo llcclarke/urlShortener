@@ -10,7 +10,10 @@ import com.twitter.util.{Await, Future}
 
 object Server extends App {
 
-  val urlController = new UrlController
+  val urlDatabaseService = new UrlDatabaseService
+
+  val urlController = new UrlController(urlDatabaseService)
+
 
   val router = new Service[Request, Response] {
 
