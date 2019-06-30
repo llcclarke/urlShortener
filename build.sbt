@@ -5,7 +5,6 @@ scalaVersion := "2.12.6"
 version := "1.0"
 
 libraryDependencies += "com.twitter" %% "finagle-http" % "19.6.0"
-libraryDependencies += "io.github.finagle" %% "finagle-postgres" % "0.11.0"
 
 libraryDependencies += "org.specs2" %% "specs2-core" % "4.3.4" % "test"
 libraryDependencies += "org.specs2" %% "specs2-mock" % "4.3.4" % "test"
