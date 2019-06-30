@@ -18,10 +18,11 @@ class UrlController {
   def toTier(url: String) = {
 
     val urlToShorten = urlWithoutSlash(url)
+    val hashedUrl = Base64.encodeString(urlToShorten)
 
-    val shortenUrl = "tier.app/" + Base64.encodeString(urlToShorten)
+    val shortenUrl = "tier.app/" + hashedUrl
 
-    collection.insertOne(Document("url" -> urlToShorten, "tinyUrl" -> shortenUrl)).subscribe(new Observer[Completed] {
+    collection.insertOne(Document("url" -> urlToShorten, "tinyUrl" -> hashedUrl)).subscribe(new Observer[Completed] {
       override def onNext(result: Completed): Unit = println("Inserted")
 
       override def onError(e: Throwable): Unit = println(" \n\nFailed " + e + "\n\n")
